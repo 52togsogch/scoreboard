@@ -17,7 +17,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
     private int hostScore;
     private int guestScore;
     private int remainingSeconds;
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int incLimit(int score, int inc) {
-        if (score + inc <= 1000) {
+        if (score + inc <= 99&& score + inc >=0) {
             return score + inc;
         }
         return score;
@@ -88,11 +88,10 @@ public class MainActivity extends AppCompatActivity {
     public void incrementScore(View v) {
         switch (v.getId()) {
             case R.id.incHost1: hostScore = incLimit(hostScore, 1); break;
-            case R.id.incHost2: hostScore = incLimit(hostScore, 2); break;
-            case R.id.incHost3: hostScore = incLimit(hostScore, 3); break;
+            case R.id.incHost2: hostScore = incLimit(hostScore, -1); break;
             case R.id.incGuest1: guestScore = incLimit(guestScore, 1); break;
-            case R.id.incGuest2: guestScore = incLimit(guestScore, 2); break;
-            case R.id.incGuest3: guestScore = incLimit(guestScore, 3); break;
+            case R.id.incGuest2: guestScore = incLimit(guestScore, -1); break;
+
         }
         updateAll();
     }

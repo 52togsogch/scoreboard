@@ -61,15 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:onClick="incrementScore"
-                android:text="+2 оноо" />
+                android:text="-1 оноо" />
 
-            <Button
-                android:id="@+id/incHost3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:onClick="incrementScore"
-                android:text="+3 оноо" />
+
 
 
         </LinearLayout>
@@ -125,15 +119,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:onClick="incrementScore"
-                android:text="+2 оноо" />
+                android:text="-1 оноо" />
 
-            <Button
-                android:id="@+id/incGuest3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:onClick="incrementScore"
-                android:text="+3 оноо" />
+
 
 
         </LinearLayout>
