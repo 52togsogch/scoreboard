@@ -30,12 +30,12 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Эзэн"
+                android:text="Зочин"
                 android:textColor="#616161"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/host_score"
+                android:id="@+id/guestScore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="24dp"
@@ -48,7 +48,7 @@
                 android:textSize="56sp" />
 
             <Button
-                android:id="@+id/incHost1"
+                android:id="@+id/incGuestByOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -56,7 +56,7 @@
                 android:text="+1 оноо" />
 
             <Button
-                android:id="@+id/incHost2"
+                android:id="@+id/decGuestByOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -90,12 +90,12 @@
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_horizontal"
                 android:padding="16dp"
-                android:text="Зочин"
+                android:text="Эзэн"
                 android:textColor="#616161"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/guest_score"
+                android:id="@+id/hostScore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -106,7 +106,7 @@
                 android:textSize="56sp" />
 
             <Button
-                android:id="@+id/incGuest1"
+                android:id="@+id/incHostByOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -114,7 +114,7 @@
                 android:text="+1 оноо" />
 
             <Button
-                android:id="@+id/incGuest2"
+                android:id="@+id/decHostByOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

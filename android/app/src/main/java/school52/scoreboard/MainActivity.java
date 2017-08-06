@@ -17,7 +17,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private int hostScore;
     private int guestScore;
     private int remainingSeconds;
@@ -35,8 +35,8 @@ public class    MainActivity extends AppCompatActivity {
         timeManager = new TimeManager((TextView) v);
         View.OnLongClickListener numberEditor = new NumberEditor();
 
-        findViewById(R.id.host_score).setOnLongClickListener(numberEditor);
-        findViewById(R.id.guest_score).setOnLongClickListener(numberEditor);
+        findViewById(R.id.guestScore).setOnLongClickListener(numberEditor);
+        findViewById(R.id.hostScore).setOnLongClickListener(numberEditor);
         v.setOnLongClickListener(numberEditor);
         v.setOnClickListener(timeManager);
 
@@ -48,11 +48,11 @@ public class    MainActivity extends AppCompatActivity {
     }
 
     public void updateHostScore() {
-        ((TextView) findViewById(R.id.host_score)).setText(String.valueOf(hostScore));
+        ((TextView) findViewById(R.id.guestScore)).setText(String.valueOf(hostScore));
     }
 
     public void updateGuestScore() {
-        ((TextView) findViewById(R.id.guest_score)).setText(String.valueOf(guestScore));
+        ((TextView) findViewById(R.id.hostScore)).setText(String.valueOf(guestScore));
     }
 
     public void updateClock() {
@@ -66,7 +66,7 @@ public class    MainActivity extends AppCompatActivity {
     }
 
     public int incLimit(int score, int inc) {
-        if (score + inc <= 99&& score + inc >=0) {
+        if (score + inc <= 99 && score + inc >= 0) {
             return score + inc;
         }
         return score;
@@ -87,10 +87,10 @@ public class    MainActivity extends AppCompatActivity {
 
     public void incrementScore(View v) {
         switch (v.getId()) {
-            case R.id.incHost1: hostScore = incLimit(hostScore, 1); break;
-            case R.id.incHost2: hostScore = incLimit(hostScore, -1); break;
-            case R.id.incGuest1: guestScore = incLimit(guestScore, 1); break;
-            case R.id.incGuest2: guestScore = incLimit(guestScore, -1); break;
+            case R.id.incGuestByOne: hostScore = incLimit(hostScore, 1); break;
+            case R.id.decGuestByOne: hostScore = incLimit(hostScore, -1); break;
+            case R.id.incHostByOne: guestScore = incLimit(guestScore, 1); break;
+            case R.id.decHostByOne: guestScore = incLimit(guestScore, -1); break;
 
         }
         updateAll();
@@ -187,8 +187,8 @@ public class    MainActivity extends AppCompatActivity {
             TextView title = (TextView) promptsView.findViewById(R.id.editTextTitle);
             int limit = 3;
             switch (v.getId()) {
-                case R.id.guest_score:
-                case R.id.host_score:
+                case R.id.hostScore:
+                case R.id.guestScore:
                     userInput.setText(((TextView) v).getText());
                     title.setText("Шинэ оноо");
                     break;
@@ -208,11 +208,11 @@ public class    MainActivity extends AppCompatActivity {
                     .setPositiveButton("Шинэчлэх", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog,  int id) {
                             switch (v.getId()) {
-                                case R.id.guest_score:
+                                case R.id.hostScore:
                                     guestScore = Integer.parseInt(userInput.getText().toString());
                                     updateGuestScore();
                                     break;
-                                case R.id.host_score:
+                                case R.id.guestScore:
                                     hostScore = Integer.parseInt(userInput.getText().toString());
                                     updateHostScore();
                                     break;
